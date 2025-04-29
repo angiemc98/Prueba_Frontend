@@ -22,10 +22,10 @@ const FormularioProducto = () => {
     return (
         <form 
             onSubmit={manejarSubmit}
-            className="bg-white p-6 rounded-xl shadow-md space-y-4"
+            className="bg-white p-6 rounded-xl shadow-lg space-y-4 border border-gray-100"
             aria-label="Formulario para crear producto"
         >
-            <h2 className='text-xl font-semibold texte-gray-700'>Nuevo Producto</h2>
+            <h2 className='text-xl font-semibold text-gray-700'>Nuevo Producto</h2>
             <Input
                 aria-label='Código del producto'
                 placeholder='Código'

@@ -9,6 +9,7 @@ const ListaProductos = () => {
     
     return (
         <div className="space-y-6" aria-label="Listado de productos">
+            <h4 className='text-xl font-semibold text-gray-400'>Buscar</h4>
             <Input
             aria-label="Buscar producto por nombre"
             placeholder="Buscar por nombre..."
