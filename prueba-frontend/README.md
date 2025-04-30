@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  Prueba Técnica Front-End - Gestión de Productos
 
-## Getting Started
+## 🚀 Tecnologías utilizadas
 
-First, run the development server:
+- **Next.js 15** con App Router
+- **TypeScript**
+- **TailwindCSS**
+- **Jest + Testing Library**
+- **Context API**
+- **LocalStorage**
+- **Dynamic Imports** (para optimización de carga)
+
+## 📦 Instrucciones para instalar y ejecutar localmente
+
+2. **Instalar dependencias principales del proyecto:**
+
+```bash
+npm install
+```
+
+
+3. **Ejecutar la app en modo desarrollo:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Abrir en el navegador:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
+Decisiones técnicas
 
-## Learn More
+### 🔹 Elección de tecnologías
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 15**: Framework moderno, optimizado para producción, con excelente soporte de routing.
+- **TailwindCSS**: Permite construir UIs limpias y responsivas rápidamente sin escribir CSS manual.
+- **Context API**: Suficiente para la escala del proyecto, simple, claro y sin sobrecarga.
+- **LocalStorage**: Persistencia ligera sin necesidad de backend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔹 Organización del estado
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Se centralizó en `ProductoContext` para que los componentes puedan:
+- Crear y eliminar productos.
+- Filtrar por nombre.
+- Compartir estado global y mantener separación de responsabilidades.
 
-## Deploy on Vercel
+### 🔹 Optimización
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Se usan **dynamic imports** para cargar `FormularioProducto` y `ListaProductos`, mejorando el tiempo de carga inicial.
+- Los componentes UI (`Input`, `Button`) son reutilizables y configurables.

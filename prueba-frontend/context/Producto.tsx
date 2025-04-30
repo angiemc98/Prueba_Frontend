@@ -52,6 +52,13 @@ export const ProductoProvider = ({children}: {children: React.ReactNode}) => {
     const generarId = () => generarUUID();
 
     const crearProducto = (producto: Omit<Producto, 'id' | 'creacion'>) => {
+        const codigoExistente = productos.some(p => p.codigo === producto.codigo);
+        
+        if (codigoExistente) {
+            alert('Ya existe un producto con ese código.')
+            return;
+        }
+
         const nuevo = { ...producto, id: generarId(), creacion: new Date().toISOString()};
         setProductos(prev => [...prev, nuevo]);
     };
