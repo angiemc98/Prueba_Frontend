@@ -5,6 +5,7 @@ import { ProductoProvider } from '@/context/Producto';
 import ListaProductos from '@/components/ListaProductos';
 
 
+
 describe('Gestion de productos', () => {
     it('crea y elimina un producto', () => {
         render(
@@ -40,19 +41,13 @@ describe('Gestion de productos', () => {
                 <ListaProductos />
             </ProductoProvider>
         );
-        
-        // Primero agregamos algunos productos para probar el ordenamiento
-        // Esto asume que ya hay una función para agregar productos de prueba
-        // o que se pueden agregar manualmente desde el contexto para pruebas
-        
+                
         // Verificamos que el select de ordenamiento existe
         const selectOrdenamiento = screen.getByLabelText('Seleccionar orden');
         expect(selectOrdenamiento).toBeInTheDocument();
         
         // Cambiamos el orden a 'nombre'
         fireEvent.change(selectOrdenamiento, { target: { value: 'nombre' } });
-        
-        // Aquí verificaríamos que los productos estén ordenados por nombre
-        // Esto depende de cómo estén estructurados tus datos de prueba
+
     });
 });
